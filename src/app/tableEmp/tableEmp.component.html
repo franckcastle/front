@@ -104,37 +104,43 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="form34" class="form-control validate" />
-          <label data-error="wrong" data-success="right" for="form34"
-            >ID de l'employé</label
-          >
-        </div>
+      <form #updateForm="ngForm" (ngSubmit)="onUpdateEmployee(updateForm)">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <label for="uid"> ID de l'employé</label>
+            <input
+              type="text"
+              ngModel
+              name="uid"
+              id="uid"
+              class="form-control"
+            />
+          </div>
 
-        <div class="md-form mb-5">
-          <input type="email" id="form29" class="form-control validate" />
-          <label data-error="wrong" data-success="right" for="form29"
-            >Nom de l'employé en français</label
-          >
-        </div>
+          <div class="md-form mb-5">
+            <label for="cn">Nom de l'employé en français</label>
+            <input type="text" ngModel name="cn" id="cn" class="form-control" />
+          </div>
 
-        <div class="md-form mb-5">
-          <input type="text" id="form32" class="form-control validate" />
-          <label data-error="wrong" data-success="right" for="form32"
-            >Prénom de l'employé en français</label
-          >
-        </div>
+          <div class="md-form mb-5">
+            <label for="sn">Prénom de l'employé en français</label>
+            <input type="text" ngModel name="sn" id="sn" class="form-control" />
+          </div>
 
-        <div class="md-form">
-          <input type="text" id="form32" class="form-control validate" />
-          <label data-error="wrong" data-success="right" for="form32"
-            >Email</label
-          >
+          <div class="md-form">
+            <label for="mail">Email</label>
+            <input
+              type="text"
+              ngModel
+              name="mail"
+              id="mail"
+              class="form-control"
+            />
+          </div>
         </div>
-      </div>
+      </form>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique">Sauvegarder</button>
+        <button type="submit" class="btn btn-unique">Sauvegarder</button>
       </div>
     </div>
   </div>

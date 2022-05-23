@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee} from './../models/employee'
 import { response } from 'express';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 declare interface TableData {
   headerRow: string[];
@@ -31,6 +32,19 @@ constructor( private employeeSService : EmployeeSService) { }
         alert (error.message);
       }
 
+    );
+
+  }
+
+  public onUpdateEmployee (updateForm: NgForm): void {
+    this.employeeSService.updateEmployee(updateForm.value).subscribe(
+      (response: Employee []) => {
+        console.log(response);
+        this.getEmployees();
+      },
+      (error : HttpErrorResponse) =>{
+        alert (error.message);
+      }
     );
 
   }
