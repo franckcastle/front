@@ -1,0 +1,141 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="arkah">
+          <p>
+            <button
+              mat-button
+              type="submit"
+              class="btn btn-outline-success"
+              routerLinkActive="list-item-active"
+              routerLink="/formemp"
+            >
+              Ajout des employés
+            </button>
+          </p>
+          <p
+            style="width: 20%; margin-left: 40px; margin-bottom: 60px"
+            class="input-group no-border"
+          >
+            <input
+              type="text"
+              value=""
+              class="form-control"
+              placeholder="recherche..."
+            />
+          </p>
+        </div>
+        <div class="card">
+          <div role="heading">
+            <h4 class="title">Tableaux des employées</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <th>Id de l'employé</th>
+                <th>Nom en français</th>
+                <th>Prénom en français</th>
+                <th>Email</th>
+                <th>Action</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let employee of employees">
+                  <td>{{ employee.uid }}</td>
+                  <td>{{ employee.cn }}</td>
+                  <td>{{ employee.sn }}</td>
+                  <td>{{ employee.mail }}</td>
+                  <td>
+                    <button
+                      href=""
+                      class="btn btn-default btn-rounded mb-4"
+                      data-toggle="modal"
+                      data-target="#modalContactForm"
+                      data-backdrop="false"
+                    >
+                      <mat-icon>note_add</mat-icon>
+                    </button>
+                    &nbsp;
+                    <button
+                      class="btn btn-outline-info btn-sm mb-2"
+                      title="plus d'information"
+                    >
+                      <mat-icon>info</mat-icon>
+                    </button>
+                    &nbsp;
+                    <button
+                      class="btn btn-outline-danger btn-sm mb-2"
+                      title="supprimer"
+                    >
+                      <mat-icon>clear</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal HTML Markup -->
+<div
+  class="modal fade"
+  id="modalContactForm"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">
+          Effectuer des mise à jour
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="form34" class="form-control validate" />
+          <label data-error="wrong" data-success="right" for="form34"
+            >ID de l'employé</label
+          >
+        </div>
+
+        <div class="md-form mb-5">
+          <input type="email" id="form29" class="form-control validate" />
+          <label data-error="wrong" data-success="right" for="form29"
+            >Nom de l'employé en français</label
+          >
+        </div>
+
+        <div class="md-form mb-5">
+          <input type="text" id="form32" class="form-control validate" />
+          <label data-error="wrong" data-success="right" for="form32"
+            >Prénom de l'employé en français</label
+          >
+        </div>
+
+        <div class="md-form">
+          <input type="text" id="form32" class="form-control validate" />
+          <label data-error="wrong" data-success="right" for="form32"
+            >Email</label
+          >
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-unique">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+</div>
