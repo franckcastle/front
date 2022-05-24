@@ -1,4 +1,5 @@
 export interface Employee {
+    id: string;
     uid: String ;
     govCNRPS:String ;
     govCIN:String ;

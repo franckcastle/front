@@ -1,94 +1,155 @@
-<div class="main-content" >
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Ajouter un nouveaux employé</h4>
-                    </div>
-                    <div class="content">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nom en français</label>
-                                        <input type="text" class="form-control" placeholder="Nom en français">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Prénom en français</label>
-                                        <input type="email" class="form-control" placeholder="Prénom en français">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nom en Arabe</label>
-                                        <input type="text" class="form-control" placeholder="Nom en Arabe" >
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Prénom en Arabe</label>
-                                        <input type="text" class="form-control" placeholder="Prénom en Arabe" >
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Address mail</label>
-                                        <input type="text" class="form-control" placeholder="Address mail" value="@gmail.com">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>code CNRPS</label>
-                                        <input type="text" class="form-control" placeholder="code CNRPS" >
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>code CIN</label>
-                                        <input type="text" class="form-control" placeholder="code CIN" >
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Numéro de téléphone</label>
-                                        <input type="text" class="form-control" placeholder="Numéro de téléphone" >
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>code CNRPS</label>
-                                        <input type="text" class="form-control" placeholder="code CNRPS" >
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-info btn-fill pull-right">Effectuer</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Ajouter un nouveaux employé</h4>
+          </div>
+          <div class="content">
+            <form #addForm="ngForm" (ngSubmit)="onAddEmployee(addForm)">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id">Id de l'employé</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="id"
+                      id="id"
+                      class="form-control"
+                      placeholder="id"
+                    />
+                  </div>
                 </div>
-            </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="uid">UId de l'employé</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="uid"
+                      id="uid"
+                      class="form-control"
+                      placeholder="uid"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="cn">Nom en français</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="cn"
+                      id="cn"
+                      class="form-control"
+                      placeholder="Nom en français"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="sn">Prénom en français</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="sn"
+                      id="sn"
+                      class="form-control"
+                      placeholder="Prénom en français"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="cnLangAr">Nom en Arabe</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="cnLangAr"
+                      id="cnLangAr"
+                      class="form-control"
+                      placeholder="Nom en Arabe"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="snLangAr">Prénom en Arabe</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="snLangAr"
+                      id="snLangAr"
+                      class="form-control"
+                      placeholder="Prénom en Arabe"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="mail">
+                    <label>Address mail</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="mail"
+                      id="mail"
+                      class="form-control"
+                      placeholder="Address mail"
+                      value="@gmail.com"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>code CNRPS</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="govCNRPS"
+                      id="govCNRPS"
+                      class="form-control"
+                      placeholder="code CNRPS"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>code CIN</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="govCIN"
+                      id="govCIN"
+                      class="form-control"
+                      placeholder="code CIN"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-info btn-fill pull-right">
+                Effectuer
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

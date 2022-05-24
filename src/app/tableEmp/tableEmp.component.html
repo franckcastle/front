@@ -26,53 +26,56 @@
             />
           </p>
         </div>
-        <div class="card">
-          <div role="heading">
-            <h4 class="title">Tableaux des employées</h4>
-          </div>
-          <div class="content table-responsive table-full-width">
-            <table class="table table-hover table-striped">
-              <thead>
-                <th>Id de l'employé</th>
-                <th>Nom en français</th>
-                <th>Prénom en français</th>
-                <th>Email</th>
-                <th>Action</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let employee of employees">
-                  <td>{{ employee.uid }}</td>
-                  <td>{{ employee.cn }}</td>
-                  <td>{{ employee.sn }}</td>
-                  <td>{{ employee.mail }}</td>
-                  <td>
-                    <button
-                      href=""
-                      class="btn btn-default btn-rounded mb-4"
-                      data-toggle="modal"
-                      data-target="#modalContactForm"
-                      data-backdrop="false"
-                    >
-                      <mat-icon>note_add</mat-icon>
-                    </button>
-                    &nbsp;
-                    <button
-                      class="btn btn-outline-info btn-sm mb-2"
-                      title="plus d'information"
-                    >
-                      <mat-icon>info</mat-icon>
-                    </button>
-                    &nbsp;
-                    <button
-                      class="btn btn-outline-danger btn-sm mb-2"
-                      title="supprimer"
-                    >
-                      <mat-icon>clear</mat-icon>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+        <div class="container" id="main-container">
+          <div class="card">
+            <div role="heading">
+              <h4 class="title">Tableaux des employées</h4>
+            </div>
+            <div class="content table-responsive table-full-width">
+              <table class="table table-hover table-striped">
+                <thead>
+                  <th>Id de l'employé</th>
+                  <th>Nom en français</th>
+                  <th>Prénom en français</th>
+                  <th>Email</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let employee of employees">
+                    <td>{{ employee.uid }}</td>
+                    <td>{{ employee.cn }}</td>
+                    <td>{{ employee.sn }}</td>
+                    <td>{{ employee.mail }}</td>
+                    <td>
+                      <button
+                        href=""
+                        class="btn btn-outline-info btn-sm mb-2"
+                        data-toggle="modal"
+                        data-target="#modalContactForm"
+                        data-backdrop="false"
+                      >
+                        <mat-icon>note_add</mat-icon>
+                      </button>
+                      &nbsp;
+                      <button
+                        class="btn btn-outline-info btn-sm mb-2"
+                        title="plus d'information"
+                      >
+                        <mat-icon>info</mat-icon>
+                      </button>
+                      &nbsp;
+                      <button
+                        class="btn btn-outline-danger btn-sm mb-2"
+                        title="supprimer"
+                      >
+                        <mat-icon>clear</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -104,34 +107,68 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form #updateForm="ngForm" (ngSubmit)="onUpdateEmployee(updateForm)">
+      <form #updateForm="ngForm">
         <div class="modal-body mx-3">
           <div class="md-form mb-5">
-            <label for="uid"> ID de l'employé</label>
+            <label for="id"> ID de l'employé</label>
             <input
               type="text"
-              ngModel
+              ngModel="{{ updateEmployee?.id }}"
+              name="id"
+              id="id"
+              class="form-control"
+            />
+          </div>
+          <div class="md-form mb-5">
+            <label for="uid"> UID de l'employé</label>
+            <input
+              type="text"
+              ngModel="{{ updateEmployee?.uid }}"
               name="uid"
               id="uid"
               class="form-control"
+              value=""
+            />
+          </div>
+          <div class="md-form mb-5">
+            <label for="govCNRPS"> govCNRPS de l'employé</label>
+            <input
+              type="text"
+              ngModel="{{ updateEmployee?.govCNRPS }}"
+              name="govCNRPS"
+              id="govCNRPS"
+              class="form-control"
+              value=""
             />
           </div>
 
           <div class="md-form mb-5">
             <label for="cn">Nom de l'employé en français</label>
-            <input type="text" ngModel name="cn" id="cn" class="form-control" />
+            <input
+              type="text"
+              ngModel="{{ updateEmployee?.cn }}"
+              name="cn"
+              id="cn"
+              class="form-control"
+            />
           </div>
 
           <div class="md-form mb-5">
             <label for="sn">Prénom de l'employé en français</label>
-            <input type="text" ngModel name="sn" id="sn" class="form-control" />
+            <input
+              type="text"
+              ngModel="{{ updateEmployee?.sn }}"
+              name="sn"
+              id="sn"
+              class="form-control"
+            />
           </div>
 
           <div class="md-form">
             <label for="mail">Email</label>
             <input
               type="text"
-              ngModel
+              ngModel="{{ updateEmployee?.mail }}"
               name="mail"
               id="mail"
               class="form-control"
@@ -140,7 +177,12 @@
         </div>
       </form>
       <div class="modal-footer d-flex justify-content-center">
-        <button type="submit" class="btn btn-unique">Sauvegarder</button>
+        <button
+          (click)="onUpdateEmployee(updateForm.value)"
+          class="btn btn-unique"
+        >
+          Sauvegarder
+        </button>
       </div>
     </div>
   </div>

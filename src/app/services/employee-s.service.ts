@@ -17,12 +17,12 @@ export class EmployeeSService {
       return this.http.get<Employee[]>(`${this.apiServerUrl}User/find-all-user`);
     }
 
-    public addEmployee(employee:Employee):Observable<Employee[]>{
-      return this.http.post<Employee[]> (`${this.apiServerUrl}User/add-user`, employee);
+    public addEmployee(employee:Employee):Observable<Employee>{
+      return this.http.post<Employee> (`${this.apiServerUrl}User/add-user`, employee );
     }
 
     public updateEmployee(employee:Employee):Observable<Employee[]>{
-     return this.http.put<Employee[]> (`${this.apiServerUrl}User/update-user`, employee);
+     return this.http.put<Employee[]> (`${this.apiServerUrl}User/update-user`, employee );
     }
 
     public deleteEmployee(employeeUid: string):Observable<any>{

@@ -5,11 +5,6 @@ import { response } from 'express';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 
-declare interface TableData {
-  headerRow: string[];
-  dataRows: string[][];
-}
-
 @Component({
   selector: 'app-tableEmp',
   templateUrl: './tableEmp.component.html',
@@ -17,7 +12,8 @@ declare interface TableData {
 })
 export class TableEmpComponent implements OnInit {
     display = "none";
-  public employees:Employee[];
+    public employees:Employee[];
+    public updateEmployee : Employee;
 
 
 
@@ -36,8 +32,9 @@ constructor( private employeeSService : EmployeeSService) { }
 
   }
 
-  public onUpdateEmployee (updateForm: NgForm): void {
-    this.employeeSService.updateEmployee(updateForm.value).subscribe(
+  public onUpdateEmployee (employee: Employee): void {
+    
+    this.employeeSService.updateEmployee(employee).subscribe(
       (response: Employee []) => {
         console.log(response);
         this.getEmployees();
@@ -52,11 +49,6 @@ constructor( private employeeSService : EmployeeSService) { }
 ngOnInit() {
     this.getEmployees();
 }
- openModal() {
-    this.display = "block";
-  }
-  onCloseHandled() {
-    this.display = "none";
-  }
+
 
 }
