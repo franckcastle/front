@@ -17,7 +17,11 @@ export class LoginComponent implements OnInit {
   }
   loginEmployee (){
     this.employeeSService.loginEmployee(this.employee).subscribe(
-       data =>console.log ("response received"),
+       data =>{console.log (data);
+       if (data) {
+         this.router.navigateByUrl ('/dashborad')}
+         else {console.log("not working")}
+         },
        
        error =>console.log ("exception occured")
     )
