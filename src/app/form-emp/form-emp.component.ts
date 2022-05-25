@@ -19,9 +19,10 @@ export class FormEmpComponent implements OnInit {
     this.employeeSService.addEmployee(addForm.value).subscribe(
       (response : Employee ) =>{
         console.log(response);
+        addForm.reset();
       },
       (error: HttpErrorResponse) => {
-        alert (error.message);
+        addForm.reset();
       }
     );
   }

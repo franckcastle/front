@@ -66,8 +66,10 @@
                       </button>
                       &nbsp;
                       <button
+                        href=""
                         class="btn btn-outline-danger btn-sm mb-2"
                         title="supprimer"
+                        (click)="onDeleteEmployee(employee?.uid)"
                       >
                         <mat-icon>clear</mat-icon>
                       </button>

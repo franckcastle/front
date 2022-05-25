@@ -14,6 +14,7 @@ export class TableEmpComponent implements OnInit {
     display = "none";
     public employees:Employee[];
     public updateEmployee : Employee;
+    public deleteEmployee: Employee;
 
 
 
@@ -44,6 +45,19 @@ constructor( private employeeSService : EmployeeSService) { }
       }
     );
 
+  }
+
+  public onDeleteEmployee (employeeuid:string ) :void {
+    this.employeeSService.deleteEmployee(employeeuid).subscribe (
+      (response :void ) =>{
+        console.log(response);
+        this.getEmployees();
+
+      },
+      (error : HttpErrorResponse) => {
+        alert (error.message);
+      },
+    );
   }
 
 ngOnInit() {

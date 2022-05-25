@@ -25,7 +25,7 @@ export class EmployeeSService {
      return this.http.put<Employee[]> (`${this.apiServerUrl}User/update-user`, employee );
     }
 
-    public deleteEmployee(employeeUid: string):Observable<any>{
-      return this.http.delete<void> (`${this.apiServerUrl}User/delete-user-by-uid${employeeUid}`);
+    public deleteEmployee(employeeuid: string):Observable<void>{
+      return this.http.delete<void> (`${this.apiServerUrl}User/delete-user-by-uid/${employeeuid}`, );
     }
 }
