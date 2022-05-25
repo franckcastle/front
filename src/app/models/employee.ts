@@ -1,4 +1,4 @@
-export interface Employee {
+export class Employee {
     id: string;
     uid: String ;
     govCNRPS:String ;
@@ -13,4 +13,6 @@ export interface Employee {
     givenNameLangFr:String ;
     mail:String ;
     userPassword:number;
+    
 }
+

@@ -1,9 +1,8 @@
 import { EmployeeSService } from './../services/employee-s.service';
 import { Component, OnInit } from '@angular/core';
 import { Employee} from './../models/employee'
-import { response } from 'express';
 import { HttpErrorResponse } from '@angular/common/http';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-tableEmp',
@@ -47,8 +46,8 @@ constructor( private employeeSService : EmployeeSService) { }
 
   }
 
-  public onDeleteEmployee (employeeuid:string ) :void {
-    this.employeeSService.deleteEmployee(employeeuid).subscribe (
+  public onDeleteEmployee (uid:string ) :void {
+    this.employeeSService.deleteEmployee(uid).subscribe (
       (response :void ) =>{
         console.log(response);
         this.getEmployees();

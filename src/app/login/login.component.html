@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Vertical (basic) form</h2>
+  <form #loginform="ngForm" (ngSubmit)="loginEmployee()">
+    <div class="form-group">
+      <label for="uid">UID:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="uid"
+        placeholder="écrivez votre uid ici"
+        name="uid"
+        [(ngModel)]="employee.uid"
+      />
+    </div>
+    <div class="form-group">
+      <label for="userPassword">Mot de passe:</label>
+      <input
+        type="pwd"
+        class="form-control"
+        id="pwd"
+        placeholder="Enter password"
+        name="userPassword"
+        [(ngModel)]="employee.userPassword"
+      />
+    </div>
+    <button type="submit" class="btn btn-default">Connecter</button>
+  </form>
+</div>

@@ -17,6 +17,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -38,6 +39,7 @@ import {MatButtonModule} from '@angular/material/button';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    LoginComponent,
 
 
 

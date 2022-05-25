@@ -18,14 +18,20 @@ export class EmployeeSService {
     }
 
     public addEmployee(employee:Employee):Observable<Employee>{
-      return this.http.post<Employee> (`${this.apiServerUrl}User/add-user`, employee );
+      return this.http.post<Employee> (`${this.apiServerUrl}User/add-user`, employee ,);
+      
     }
 
     public updateEmployee(employee:Employee):Observable<Employee[]>{
      return this.http.put<Employee[]> (`${this.apiServerUrl}User/update-user`, employee );
     }
 
-    public deleteEmployee(employeeuid: string):Observable<void>{
-      return this.http.delete<void> (`${this.apiServerUrl}User/delete-user-by-uid/${employeeuid}`, );
+    public deleteEmployee(uid: string):Observable<void>{
+      return this.http.delete<void> (`${this.apiServerUrl}User/delete-user-by-uid/${uid}`, );
+    }
+
+    public loginEmployee (employee :Employee): Observable< any >{
+      return this.http.post <any> (`${this.apiServerUrl}User/login`, employee )
     }
 }
+
