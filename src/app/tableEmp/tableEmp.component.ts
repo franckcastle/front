@@ -10,10 +10,10 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./tableEmp.component.css']
 })
 export class TableEmpComponent implements OnInit {
-    display = "none";
     public employees:Employee[];
     public updateEmployee : Employee;
     public deleteEmployee: Employee;
+   
 
 
 

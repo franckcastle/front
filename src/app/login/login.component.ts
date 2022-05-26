@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
          this.router.navigateByUrl ('/dashborad')}
          else {console.log("not working")}
          },
-       
        error =>console.log ("exception occured")
     )
   }
