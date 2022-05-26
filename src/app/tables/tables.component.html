@@ -1,37 +1,82 @@
 <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="arkah">
-                    <p>
-                      <button mat-button type="submit" class="btn btn-outline-success" routerLinkActive="list-item-active" routerLink="/formsrct" >Ajout des structures</button>
-                    </p>
-                      <p style="width:20% ; margin-left: 40px; margin-bottom: 60px;  " class="input-group no-border">
-                          <input type="text" value=""  class="form-control" placeholder="recherche..." > 
-                      </p>
-                </div>
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">tableaux des structures</h4>
-                        <p class="category">vous trouvez ici la liste des structures</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                          <table class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let row of tableData1.dataRows">
-                                        <td *ngFor="let cell of row">{{cell}}</td>
-                                    </tr>
-                                </tbody>
-                          </table>
-
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="arkah">
+          <p>
+            <button
+              mat-button
+              type="submit"
+              class="btn btn-outline-success"
+              routerLinkActive="list-item-active"
+              routerLink="/formsrct"
+            >
+              Ajout des structures
+            </button>
+          </p>
+          <p
+            style="width: 20%; margin-left: 40px; margin-bottom: 60px"
+            class="input-group no-border"
+          >
+            <input
+              type="text"
+              value=""
+              class="form-control"
+              placeholder="recherche..."
+            />
+          </p>
         </div>
+        <div class="card">
+          <div class="header">
+            <h4 class="title">tableaux des structures</h4>
+            <p class="category">vous trouvez ici la liste des structures</p>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <th>Id de structure</th>
+                <th>Nom de structure</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let structure of structure">
+                  <td>{{ structure.id }}</td>
+                  <td>{{ structure.ou }}</td>
+                  <td>{{ structure.descriptionFr }}</td>
+                  <td>
+                    <button
+                      href=""
+                      class="btn btn-outline-info btn-sm mb-2"
+                      data-toggle="modal"
+                      data-target="#modalContactForm"
+                      data-backdrop="false"
+                    >
+                      <mat-icon>note_add</mat-icon>
+                    </button>
+                    &nbsp;
+                    <button
+                      class="btn btn-outline-info btn-sm mb-2"
+                      title="plus d'information"
+                    >
+                      <mat-icon>info</mat-icon>
+                    </button>
+                    &nbsp;
+                    <button
+                      href=""
+                      class="btn btn-outline-danger btn-sm mb-2"
+                      title="supprimer"
+                      (click)="onDeleteGroup(group?.cn)"
+                    >
+                      <mat-icon>clear</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

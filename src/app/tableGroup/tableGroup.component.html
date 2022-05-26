@@ -64,6 +64,7 @@
                       href=""
                       class="btn btn-outline-danger btn-sm mb-2"
                       title="supprimer"
+                      (click)="onDeleteGroup(group?.cn)"
                     >
                       <mat-icon>clear</mat-icon>
                     </button>
@@ -73,6 +74,85 @@
             </table>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="modalContactForm"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">
+          Effectuer des mise à jour
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #updateForm="ngForm">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <label for="id"> ID de group</label>
+            <input
+              type="text"
+              name="id"
+              id="id"
+              class="form-control"
+              ngModel="{{ updateGroup?.id }}"
+            />
+            <div class="md-form mb-5">
+              <label for="cn"> Nom du group</label>
+              <input
+                type="text"
+                ngModel="{{ updateGroup?.cn }}"
+                name="cn"
+                id="cn"
+                class="form-control"
+              />
+            </div>
+            <div class="md-form mb-5">
+              <label for="description"> Description de groupe</label>
+              <input
+                type="text"
+                ngModel="{{ updateGroup?.description }}"
+                name="description"
+                id="description"
+                class="form-control"
+              />
+              <div class="md-form mb-5">
+                <label for="description"> membre de group</label>
+                <input
+                  type="text"
+                  ngModel="{{ updateGroup?.members }}"
+                  name="description"
+                  id="description"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          (click)="onUpdateGroup(updateForm.value)"
+          class="btn btn-unique"
+        >
+          Sauvegarder
+        </button>
       </div>
     </div>
   </div>

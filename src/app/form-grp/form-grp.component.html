@@ -1,35 +1,82 @@
-<div class="main-content" >
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Ajouter un nouveaux groupe</h4>
-                    </div>
-                    <div class="content">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Nom du groupe</label>
-                                        <input type="text" class="form-control" placeholder="Nom du groupe">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Déscription du groupe</label>
-                                        <input type="text" class="form-control" placeholder="Déscription du groupe" >
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-info btn-fill pull-right">Effectuer</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Ajouter un nouveaux groupe</h4>
+          </div>
+          <div class="content">
+            <form #addForm="ngForm" (ngSubmit)="onAddGroup(addForm)">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Id du groupe</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="id"
+                      id="id"
+                      class="form-control"
+                      placeholder="Id du groupe"
+                    />
+                  </div>
                 </div>
-            </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Nom du groupe</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="cn"
+                      id="cn"
+                      class="form-control"
+                      placeholder="Nom du groupe"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Déscription du groupe</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="description"
+                      id="description"
+                      class="form-control"
+                      placeholder="Déscription du groupe"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>membre du groupe</label>
+                    <input
+                      type="text"
+                      ngModel
+                      name="members"
+                      id="members"
+                      class="form-control"
+                      placeholder="Déscription du groupe"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-info btn-fill pull-right">
+                Effectuer
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
