@@ -8,9 +8,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StructureService {
-    deleteStructure(ou: string) {
-        throw new Error('Method not implemented.');
-    }
   private apiServerUrl = environment.apiBaseUrl ;
 
   constructor(private http :  HttpClient) { }
@@ -19,16 +16,16 @@ export class StructureService {
       return this.http.get<Structure[]>(`${this.apiServerUrl}Structure/find-all-structure`);
     }
 
-    public addGroup (group:Structure):Observable<Structure>{
-      return this.http.post<Structure> (`${this.apiServerUrl}Structure/add-structure`, Structure);
+    public addStructure (structure:Structure):Observable<Structure>{
+      return this.http.post<Structure> (`${this.apiServerUrl}Structure/add-structure`, structure);
       
     }
 
-    public updateGroup( group:Structure):Observable<Structure[]>{
-     return this.http.put<Structure[]> (`${this.apiServerUrl}Structure/update-structure`, Structure );
+    public updateStructure( structure :Structure):Observable<Structure[]>{
+     return this.http.put<Structure[]> (`${this.apiServerUrl}Structure/update-structure`, structure );
     }
 
-    public deleteGroup (ou : string):Observable<void>{
-      return this.http.delete<void> (`${this.apiServerUrl}Structure/delete-structure-by-ou${ou}` );
+    public deleteStructure (ou:string):Observable<void>{
+      return this.http.delete<void> (`${this.apiServerUrl}Structure/delete-structure-by-ou/${ou}` );
     }
 }

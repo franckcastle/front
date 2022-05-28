@@ -13,9 +13,9 @@ import { GroupService } from 'app/services/group.service';
 export class TableGroupComponent implements OnInit {
   public group : Group[];
   public updateGroup: Group;
-    public updateGr: Group;
+   
 
-  private abc: string;
+
 
 
 constructor( private groupService : GroupService ) { }

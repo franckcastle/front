@@ -16,6 +16,7 @@ export class FormGrpComponent implements OnInit {
   constructor(private groupService : GroupService) { }
 
   public onAddGroup (addForm: NgForm): void {
+    //let data = {...this.group, members : group.members.split(' ,') }
     this.groupService.addGroup(addForm.value).subscribe(
       (response : Group ) =>{
         console.log(response);

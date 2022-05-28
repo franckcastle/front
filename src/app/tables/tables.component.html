@@ -66,7 +66,7 @@
                       href=""
                       class="btn btn-outline-danger btn-sm mb-2"
                       title="supprimer"
-                      (click)="onDeleteGroup(group?.cn)"
+                      (click)="onDeleteStructure(structure?.ou)"
                     >
                       <mat-icon>clear</mat-icon>
                     </button>
@@ -76,6 +76,80 @@
             </table>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal -->
+<div
+  class="modal fade"
+  id="modalContactForm"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">
+          Effectuer des mise à jour
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #updateForm="ngForm">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <label for="id"> ID de structure</label>
+            <input
+              type="text"
+              name="id"
+              id="id"
+              class="form-control"
+              required
+              ngModel="{{ updateStructure?.id }}"
+            />
+            <div class="md-form mb-5">
+              <label for="ou"> Nom du structure</label>
+              <input
+                type="text"
+                ngModel="{{ updateStructure?.ou }}"
+                name="ou"
+                id="ou"
+                class="form-control"
+                required
+              />
+
+              <div class="md-form mb-5">
+                <label for="descriptionFr"> Description de Structure</label>
+                <input
+                  type="text"
+                  ngModel="{{ updateStructure?.descriptionFr }}"
+                  name="descriptionFr"
+                  id="descriptionFr"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          (click)="onUpdateStructure(updateForm.value)"
+          class="btn btn-unique"
+          data-dismiss="modal"
+        >
+          Sauvegarder
+        </button>
       </div>
     </div>
   </div>
