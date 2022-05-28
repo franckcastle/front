@@ -16,6 +16,9 @@ export class EmployeeSService {
     public getEmployees (): Observable<Employee[]>{
       return this.http.get<Employee[]>(`${this.apiServerUrl}User/find-all-user`);
     }
+     public getEmployeeByUid (uid:number): Observable<Employee>{
+      return this.http.get<Employee>(`${this.apiServerUrl}User//find-user-by-uid/${uid}`);
+    }
 
     public addEmployee(employee:Employee):Observable<Employee>{
       return this.http.post<Employee> (`${this.apiServerUrl}User/add-user`, employee ,);

@@ -18,6 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormEmpComponent } from 'app/form-emp/form-emp.component';
 import { FormSrctComponent } from 'app/form-srct/form-srct.component';
 import { CompteComponent } from '../../compte/compte.component';
+import { UpdateEmployeeComponentComponent } from 'app/update-employee-component/update-employee-component.component';
 
 
 
@@ -43,6 +44,7 @@ import { CompteComponent } from '../../compte/compte.component';
     FormGrpComponent,
     FormSrctComponent,
     CompteComponent,
+    UpdateEmployeeComponentComponent
     
 
   ]

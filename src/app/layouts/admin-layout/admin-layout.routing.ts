@@ -9,6 +9,7 @@ import { TableGroupComponent } from '../../tableGroup/tableGroup.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { FormEmpComponent } from '../../form-emp/form-emp.component';
 import { CompteComponent } from '../../compte/compte.component';
+import { UpdateEmployeeComponentComponent } from 'app/update-employee-component/update-employee-component.component';
 
 
 
@@ -22,5 +23,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'formemp',        component: FormEmpComponent },
     { path:'formgrp',         component: FormGrpComponent},
     { path:'formsrct',        component: FormSrctComponent},
-    { path :'compte',         component:CompteComponent}
+    { path :'compte',         component:CompteComponent},
+    { path :'updateEmployee',         component:UpdateEmployeeComponentComponent}
+
 ]

@@ -2,6 +2,8 @@ import { EmployeeSService } from './services/employee-s.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +20,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -27,6 +30,7 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     NavbarModule,
@@ -34,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     SidebarModule,
     AppRoutingModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModule,
   ],
   declarations: [
     AppComponent,
